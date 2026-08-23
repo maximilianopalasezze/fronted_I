@@ -117,3 +117,7 @@ nav ul {
 nav li {
     margin-bottom: 5px;
 }
+.producto img {
+    max-width: 100%;
+    height: auto;
+}

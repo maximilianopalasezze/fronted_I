@@ -1,0 +1,56 @@
+/* ========================================
+   CARRUSEL PRINCIPAL
+======================================== */
+
+/* Mantiene todas las imágenes del carrusel
+   con una altura uniforme sin deformarlas */
+#carouselGameZone .carousel-item img {
+    width: 100%;
+    height: 460px;
+    object-fit: contain;
+    background-color: #111;
+}
+
+/* Mejora la lectura del texto sobre las imágenes */
+#carouselGameZone .carousel-caption {
+    background-color: rgba(0, 0, 0, 0.65);
+    border-radius: 10px;
+    padding: 12px;
+}
+
+/* Ajuste para tablets */
+@media (max-width: 768px) {
+    #carouselGameZone .carousel-item img {
+        height: 350px;
+    }
+}
+
+/* Ajuste para celulares */
+@media (max-width: 576px) {
+    #carouselGameZone .carousel-item img {
+        height: 260px;
+    }
+}
+
+/* ========================================
+   TARJETAS DE PRODUCTOS
+======================================== */
+
+/* Mantiene todas las imágenes de las tarjetas
+   con el mismo tamaño sin deformarlas */
+#productos .card-img-top {
+    width: 100%;
+    height: 250px;
+    object-fit: contain;
+    padding: 15px;
+}
+
+/* Mantiene las tarjetas con una distribución uniforme */
+#productos .card {
+    transition: transform 0.3s ease;
+}
+
+/* Efecto visual al pasar el mouse */
+#productos .card:hover {
+    transform: translateY(-5px);
+}

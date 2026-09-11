@@ -1,0 +1,23 @@
+[
+  {
+    "nombre": "PlayStation 5",
+    "descripcion": "Recomendada para quienes buscan títulos exclusivos, rapidez de carga y una experiencia de nueva generación.",
+    "categoria": "Alto rendimiento",
+    "imagen": "img/ps5.jpg",
+    "alt": "PlayStation 5 recomendada"
+  },
+  {
+    "nombre": "Xbox Series X",
+    "descripcion": "Una alternativa potente para jugadores que valoran rendimiento, catálogo amplio y partidas fluidas.",
+    "categoria": "Potencia",
+    "imagen": "img/xbox.jpg",
+    "alt": "Xbox Series X recomendada"
+  },
+  {
+    "nombre": "Nintendo Switch",
+    "descripcion": "Ideal para quienes prefieren flexibilidad y quieren jugar tanto de forma portátil como en el televisor.",
+    "categoria": "Versatilidad",
+    "imagen": "img/switch.jpg",
+    "alt": "Nintendo Switch recomendada"
+  }
+]

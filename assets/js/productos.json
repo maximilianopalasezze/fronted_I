@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "nombre": "PlayStation 5",
+    "categoria": "consolas",
+    "precio": 599990,
+    "imagen": "assets/img/ps5.jpg",
+    "alt": "Consola PlayStation 5",
+    "descripcion": "Consola de nueva generación con almacenamiento SSD y alto rendimiento."
+  },
+  {
+    "id": 2,
+    "nombre": "Xbox Series X",
+    "categoria": "consolas",
+    "precio": 549990,
+    "imagen": "assets/img/xbox.jpg",
+    "alt": "Consola Xbox Series X",
+    "descripcion": "Potencia, velocidad y acceso a un amplio catálogo de videojuegos."
+  },
+  {
+    "id": 3,
+    "nombre": "Nintendo Switch",
+    "categoria": "portatiles",
+    "precio": 349990,
+    "imagen": "assets/img/switch.jpg",
+    "alt": "Consola Nintendo Switch",
+    "descripcion": "Diseño híbrido para jugar tanto en el televisor como de forma portátil."
+  },
+  {
+    "id": 4,
+    "nombre": "Joystick Microsoft Xbox Nueva Generación Carbon Black Color Negro",
+    "categoria": "accesorios",
+    "precio": 99990,
+    "imagen": "assets/img/control.jpg",
+    "alt": "Control inalámbrico para videojuegos",
+    "descripcion": "Control ergonómico con conexión inalámbrica y respuesta precisa."
+  },
+  {
+    "id": 5,
+    "nombre": "auriculares gamer pro kotion each g9000 con micrófono luz led rojo",
+    "categoria": "accesorios",
+    "precio": 29990,
+    "imagen": "assets/img/audifonos.jpg",
+    "alt": "Audífonos gamer",
+    "descripcion": "Audio envolvente, micrófono ajustable y diseño cómodo para largas sesiones."
+  },
+  {
+    "id": 6,
+    "nombre": "Estación De Carga Dual Para Control Ps5 Dualsense / Edge Blanco",
+    "categoria": "accesorios",
+    "precio": 29990,
+    "imagen": "assets/img/cargador.jpg",
+    "alt": "Base de carga para controles",
+    "descripcion": "Base compacta para mantener los controles cargados y ordenados."
+  }
+]

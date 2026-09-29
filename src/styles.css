@@ -1,5 +1,5 @@
 /* =========================================================
-   GAME ZONE X - SEMANA 6
+   GAME ZONE X - SEMANA 7
    Estilos complementarios a Bootstrap 5.
    ========================================================= */
 
@@ -91,4 +91,19 @@ body {
     .producto-card .card-img-top {
         height: 190px;
     }
+}
+
+/* React controla la navegación móvil y los mensajes mediante estado. */
+section[id], aside[id] { scroll-margin-top: 90px; }
+.feedback-compra { min-height: 1.7rem; margin-bottom: .75rem; color: #146c43; font-weight: 600; }
+.carrito-img { width: 42px; height: 42px; object-fit: contain; }
+.lista-carrito { max-height: 45vh; overflow-y: auto; padding-right: .3rem; }
+.skip-link:focus { position: fixed; top: .5rem; left: .5rem; padding: .75rem; background: white; z-index: 1100; }
+button:focus-visible, a:focus-visible { outline: 3px solid #ffbf47; outline-offset: 3px; }
+@media (max-width: 1199.98px) { .navbar-collapse { padding-top: .8rem; } }
+@media (max-width: 991.98px) { .lista-carrito { max-height: none; } }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .producto-card { transition: none; }
+  .producto-card:hover { transform: none; }
 }

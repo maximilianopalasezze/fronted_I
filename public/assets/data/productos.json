@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "nombre": "PlayStation 5",
+    "categoria": "consolas",
+    "imagen": "assets/img/ps5.jpg",
+    "alt": "Consola PlayStation 5",
+    "descripcion": "Consola de nueva generación con almacenamiento SSD y alto rendimiento.",
+    "precioNormal": 599990,
+    "precioOferta": 549990
+  },
+  {
+    "id": 2,
+    "nombre": "Xbox Series X",
+    "categoria": "consolas",
+    "imagen": "assets/img/xbox.jpg",
+    "alt": "Consola Xbox Series X",
+    "descripcion": "Potencia, velocidad y acceso a un amplio catálogo de videojuegos.",
+    "precioNormal": 549990,
+    "precioOferta": 499990
+  },
+  {
+    "id": 3,
+    "nombre": "Nintendo Switch",
+    "categoria": "portatiles",
+    "imagen": "assets/img/switch.jpg",
+    "alt": "Consola Nintendo Switch",
+    "descripcion": "Diseño híbrido para jugar tanto en el televisor como de forma portátil.",
+    "precioNormal": 349990,
+    "precioOferta": 319990
+  },
+  {
+    "id": 4,
+    "nombre": "Control Xbox Carbon Black",
+    "categoria": "accesorios",
+    "imagen": "assets/img/control.jpg",
+    "alt": "Control inalámbrico para videojuegos",
+    "descripcion": "Control ergonómico con conexión inalámbrica y respuesta precisa.",
+    "precioNormal": 99990,
+    "precioOferta": 89990
+  },
+  {
+    "id": 5,
+    "nombre": "Audífonos gamer Kotion Each G9000",
+    "categoria": "accesorios",
+    "imagen": "assets/img/audifonos.jpg",
+    "alt": "Audífonos gamer",
+    "descripcion": "Audio envolvente, micrófono ajustable y diseño cómodo para largas sesiones.",
+    "precioNormal": 29990,
+    "precioOferta": 24990
+  },
+  {
+    "id": 6,
+    "nombre": "Estación de carga DualSense / Edge",
+    "categoria": "accesorios",
+    "imagen": "assets/img/cargador.jpg",
+    "alt": "Base de carga para controles",
+    "descripcion": "Base compacta para mantener los controles cargados y ordenados.",
+    "precioNormal": 29990,
+    "precioOferta": 24990
+  }
+]

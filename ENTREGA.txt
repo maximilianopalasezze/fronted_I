@@ -1,0 +1,23 @@
+FRONTEND I — SEMANA 7 — MAXIMILIANO PALASEZZE
+
+ENTREGAR EN AVA
+1. Este archivo ZIP con el proyecto completo.
+2. Enlace del código de Semana 7:
+https://github.com/maximilianopalasezze/fronted_I/tree/semana7-entrega
+3. Enlace de la aplicación:
+https://maximilianopalasezze.github.io/fronted_I/
+
+CONTENIDO
+Código React, datos e imágenes, compilación dist, README, nueve capturas y pruebas.
+
+VALIDACIÓN
+6/6 pruebas unitarias y 6/6 pruebas de navegador aprobadas. Compilación correcta.
+
+PARA EJECUTAR EN EL PC
+Instalar Node.js 22.12 o superior. Abrir PowerShell en esta carpeta:
+npm ci
+npm run dev
+Abrir la URL que muestre Vite. No abrir index.html con doble clic.
+
+Rama de publicación: gh-pages. La Semana 6 se conserva en semana6-entrega.
+El ZIP cumple el patrón NombreAlumno_NombreActividad_SiglaAsignatura.zip.

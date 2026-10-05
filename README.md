@@ -5,9 +5,7 @@
 - [Código de la Semana 8](https://github.com/maximilianopalasezze/fronted_I/tree/semana8-entrega)
 - [Aplicación en GitHub Pages](https://maximilianopalasezze.github.io/fronted_I/)
 - [Rama de despliegue gh-pages](https://github.com/maximilianopalasezze/fronted_I/tree/gh-pages)
-- [Checklist de la pauta](docs/PAUTA.md)
 - [Evidencias con explicación](docs/EVIDENCIAS.md)
-- [Validación y casos de prueba](docs/VALIDACION.md)
 
 Las diez capturas nuevas se encuentran en `docs/evidencias/semana8/`, con explicación en `docs/EVIDENCIAS.md`.
 
@@ -77,7 +75,7 @@ src/
   utils/carrito.js         # Operaciones inmutables, precios y totales
   styles.css               # Estilos Bootstrap complementarios
  tests/                    # Pruebas unitarias y de navegador
- docs/                     # Pauta, validación y capturas
+ docs/                     # Capturas y explicación de evidencias
  index.html
  package.json
  package-lock.json

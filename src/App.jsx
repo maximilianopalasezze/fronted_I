@@ -48,7 +48,7 @@ export default function App() {
         <div className="container">
           <div className="feedback-compra" role="status" aria-live="polite">{mensaje}</div>
           <div className="row g-4">
-            <ProductList productos={filtrados} estado={estado} categoria={categoria} busqueda={busqueda}
+            <ProductList productos={filtrados} carrito={carrito} estado={estado} categoria={categoria} busqueda={busqueda}
               onLimpiar={limpiarFiltros} onReintentar={reintentar} onAgregar={agregar} />
             <Cart carrito={carrito} resumen={resumen} onCantidad={actualizarCantidad} onEliminar={eliminar} onVaciar={vaciar} />
           </div>

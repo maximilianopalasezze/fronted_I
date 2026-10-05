@@ -1,9 +1,9 @@
 {
-  "name": "game-zone-x-semana7",
-  "version": "1.0.0",
+  "name": "game-zone-x-semana8",
+  "version": "1.1.0",
   "private": true,
   "type": "module",
-  "description": "Game Zone X — Desarrollo Frontend I PFY2201 Semana 7",
+  "description": "Game Zone X — Desarrollo Frontend I PFY2201 Semana 8: useState, useEffect y renderizado condicional",
   "scripts": {
     "dev": "vite --host 0.0.0.0",
     "build": "vite build",

@@ -1,7 +1,9 @@
 import { CATEGORIAS } from '../utils/catalogo.js';
 import { formatearPrecio, tieneOferta } from '../utils/carrito.js';
 
-export default function ProductCard({ producto, onAgregar }) {
+export default function ProductCard({ producto, cantidadEnCarrito, onAgregar }) {
+  // El estado compartido del carrito determina texto y estilo; al eliminar, se revierten.
+  const enCarrito = cantidadEnCarrito > 0;
   const oferta = tieneOferta(producto);
   const descuento = oferta ? Math.round((1 - producto.precioOferta / producto.precioNormal) * 100) : 0;
   return <div className="col-12 col-md-6">
@@ -19,7 +21,14 @@ export default function ProductCard({ producto, onAgregar }) {
           {oferta ? <p className="fs-5 fw-bold text-success mb-0">Precio oferta: {formatearPrecio(producto.precioOferta)}</p>
             : <p className="small text-secondary mb-0">Sin oferta vigente</p>}
         </div>
-        <button className="btn btn-primary" type="button" onClick={() => onAgregar(producto)} aria-label={`Agregar ${producto.nombre} al carrito`}>Agregar al carrito</button>
+        <button className={`btn ${enCarrito ? 'btn-success' : 'btn-primary'}`} type="button"
+          onClick={() => onAgregar(producto)}
+          aria-label={enCarrito ? `Agregar otra unidad de ${producto.nombre}` : `Agregar ${producto.nombre} al carrito`}>
+          {enCarrito ? '✓ En el carrito' : 'Agregar al carrito'}
+        </button>
+        {enCarrito && <p className="small text-success text-center mt-2 mb-0" aria-live="polite">
+          {cantidadEnCarrito} {cantidadEnCarrito === 1 ? 'unidad' : 'unidades'} · Pulsa para agregar otra.
+        </p>}
       </div>
     </article>
   </div>;

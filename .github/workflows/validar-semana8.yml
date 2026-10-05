@@ -1,0 +1,43 @@
+name: Validar Semana 8
+
+on:
+  push:
+    branches: [semana8-entrega]
+    paths-ignore:
+      - 'docs/**'
+      - 'README.md'
+      - 'ENTREGA.txt'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm test
+      - run: npm run build
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test:e2e
+      - name: Guardar capturas de Semana 8
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: evidencias-semana8
+          path: docs/evidencias/semana8/*.png
+          if-no-files-found: error
+      - name: Guardar diagnóstico si falla una prueba
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: diagnostico-semana8
+          path: test-results/
+          if-no-files-found: ignore

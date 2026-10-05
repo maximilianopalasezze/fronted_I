@@ -10,7 +10,7 @@ export default function Footer() {
         </div>
       </div>
       <hr className="border-secondary" />
-      <p className="small text-white-50 mb-0">Proyecto académico · Catálogo y precios de demostración · Sin pagos reales.</p>
+      <p className="small text-white-50 mb-0"
     </div>
   </footer>;
 }

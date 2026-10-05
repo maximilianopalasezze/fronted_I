@@ -73,7 +73,8 @@ test('botón condicional sincronizado al agregar, filtrar, eliminar y vaciar', a
   await page.getByRole('button', { name: 'Mostrar todos', exact: true }).click();
   await expect(ps5.getByRole('button')).toHaveText('✓ En el carrito');
   await imagenesListas(page);
-  await page.locator('#productos').scrollIntoViewIfNeeded();
+  // Encuadrar las primeras tarjetas después de cargar también las imágenes inferiores.
+  await page.evaluate(() => window.scrollTo(0, document.getElementById('productos').offsetTop - 72));
   await page.screenshot({ path: rutaCaptura('10_boton_en_carrito') });
   await page.getByRole('button', { name: 'Eliminar PlayStation 5', exact: true }).click();
   await expect(ps5.getByRole('button')).toHaveText('Agregar al carrito');

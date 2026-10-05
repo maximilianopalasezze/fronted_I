@@ -1,23 +1,26 @@
-FRONTEND I — SEMANA 7 — MAXIMILIANO PALASEZZE
+FRONTEND I — SEMANA 8 — MAXIMILIANO PALASEZZE
+Actividad: Mejorando funcionalidades clave en el eCommerce con React.
 
 ENTREGAR EN AVA
-1. Este archivo ZIP con el proyecto completo.
-2. Enlace del código de Semana 7:
-https://github.com/maximilianopalasezze/fronted_I/tree/semana7-entrega
-3. Enlace de la aplicación:
+1. Enlace del código:
+https://github.com/maximilianopalasezze/fronted_I/tree/semana8-entrega
+2. Enlace de la aplicación:
 https://maximilianopalasezze.github.io/fronted_I/
+3. Capturas de datos cargados, carrito y renderizado condicional:
+docs/evidencias/semana8/
+Explicación: docs/EVIDENCIAS.md
 
-CONTENIDO
-Código React, datos e imágenes, compilación dist, README, nueve capturas y pruebas.
+DOCUMENTACIÓN
+README.md: ejecución, estructura, estado, efectos y publicación.
+docs/PAUTA.md: checklist de los cinco criterios.
+docs/VALIDACION.md: pruebas y comprobación del despliegue.
 
 VALIDACIÓN
-6/6 pruebas unitarias y 6/6 pruebas de navegador aprobadas. Compilación correcta.
+6 pruebas unitarias y 7 de navegador aprobadas en GitHub Actions.
+Instalación limpia y compilación correctas. Diez capturas nuevas.
 
-PARA EJECUTAR EN EL PC
-Instalar Node.js 22.12 o superior. Abrir PowerShell en esta carpeta:
+EJECUTAR EN WINDOWS
+Node.js 22.12 o superior; PowerShell dentro de la carpeta del proyecto:
 npm ci
 npm run dev
-Abrir la URL que muestre Vite. No abrir index.html con doble clic.
-
-Rama de publicación: gh-pages. La Semana 6 se conserva en semana6-entrega.
-El ZIP cumple el patrón NombreAlumno_NombreActividad_SiglaAsignatura.zip.
+Abrir la URL de Vite. No abrir index.html con doble clic.

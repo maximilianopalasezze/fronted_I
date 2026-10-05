@@ -1,13 +1,5 @@
 # Game Zone X — Semana 8
 
-**Alumno:** Maximiliano Palasezze
-
-**Asignatura:** Desarrollo Frontend I (PFY2201)
-
-**Actividad:** Mejorando funcionalidades clave en el eCommerce con React.
-
-Continuación del eCommerce React de la Semana 7 con componentes funcionales, `useState`, eventos y renderizado condicional. Se conservan el diseño Bootstrap, la identidad Game Zone X, las imágenes y los seis productos originales. Se incorporan precios de oferta de demostración.
-
 ## Enlaces de entrega
 
 - [Código de la Semana 8](https://github.com/maximilianopalasezze/fronted_I/tree/semana8-entrega)
@@ -118,14 +110,7 @@ El script `predeploy` compila y `gh-pages -d dist` publica. En GitHub, **Setting
 
 Aplicación académica de frontend: no realiza pagos, no envía pedidos ni guarda datos personales. El carrito se mantiene durante la sesión de la página y se reinicia al recargar, tal como corresponde a esta implementación con `useState`. Las ofertas son datos de demostración, no precios comerciales verificados. Imágenes y marca conservadas del proyecto anterior.
 
-## Referencias técnicas
 
-- [React: estado de un componente](https://react.dev/learn/state-a-components-memory)
-- [React: actualizar arreglos en estado](https://react.dev/learn/updating-arrays-in-state)
-- [React: renderizado condicional](https://react.dev/learn/conditional-rendering)
-- [Vite: despliegue estático](https://vite.dev/guide/static-deploy.html)
-
-## Mejora específica de Semana 8
 
 El flujo `App → ProductList → ProductCard` transmite `cantidadEnCarrito`, calculada desde el mismo estado `carrito` que usa el resumen. El botón es azul y dice **Agregar al carrito** cuando el producto está ausente; cambia a verde y **✓ En el carrito** cuando está presente. Muestra la cantidad y permite agregar otra unidad. Al eliminar o vaciar, recupera su texto inicial; al filtrar, conserva el estado real del carrito.
 

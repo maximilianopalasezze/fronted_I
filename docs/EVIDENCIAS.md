@@ -4,9 +4,9 @@ Las capturas de esta evaluación están en `docs/evidencias/semana9/`. Las de Se
 
 ## Resultado de la verificación
 
-Verificación local del 11 de octubre de 2026: compilación de producción correcta y 10 pruebas unitarias aprobadas. Las 16 pruebas end-to-end fueron aprobadas en Chromium, Firefox y WebKit (48 ejecuciones), con pantallas de 320, 390, 768 y 1440 píxeles. En total: 58 ejecuciones aprobadas, sumando las 10 pruebas unitarias.
+Verificación del catálogo actualizado del 11 de octubre de 2026: compilación correcta y 58 pruebas aprobadas en GitHub Actions: 10 unitarias y 48 end-to-end (16 escenarios en cada navegador: Chromium, Firefox y WebKit). También se comprobaron localmente las 10 pruebas unitarias y los 16 escenarios de Chromium. Las pruebas responsivas usan pantallas de 320, 390, 768 y 1440 píxeles.
 
-Las pruebas de tamaños usan viewports de navegador, no dispositivos físicos. No se afirma compatibilidad con todos los dispositivos existentes. La verificación remota de [GitHub Actions](https://github.com/maximilianopalasezze/fronted_I/actions/runs/38159657788) terminó correctamente. La [página de Semana 9](https://maximilianopalasezze.github.io/fronted_I/) está publicada y fue comprobada en navegador.
+Las pruebas de tamaños usan viewports de navegador, no dispositivos físicos. No se afirma compatibilidad con todos los dispositivos existentes. La verificación remota de [GitHub Actions](https://github.com/maximilianopalasezze/fronted_I/actions/runs/38164161414) terminó correctamente con los diez juegos del alumno y generó las 14 capturas de esta entrega. La [página de Semana 9](https://maximilianopalasezze.github.io/fronted_I/) está publicada y fue comprobada en navegador.
 
 ## Capturas de funcionamiento
 

@@ -56,7 +56,7 @@ export default function CatalogManager({ productos, estado, onAgregar, onElimina
             </FormField>
             <FormField id="juego-imagen" label="Portada" error={errores.imagen}>
               <select {...atributosCampo('juego-imagen', errores.imagen)} className={`form-select${errores.imagen ? ' is-invalid' : ''}`} value={datos.imagen} onChange={(e) => actualizar('imagen', e.target.value)}>
-                {PORTADAS.map((p) => <option key={p.ruta} value={p.ruta}>{p.nombre}</option>)}
+                {PORTADAS.map((p) => <option key={p.ruta} value={p.ruta} title={p.nombre}>{p.etiqueta ?? p.nombre}</option>)}
               </select>
             </FormField>
             <button className="btn btn-primary align-self-start" type="submit">Agregar videojuego</button>

@@ -111,5 +111,5 @@ button:focus-visible, a:focus-visible { outline: 3px solid #ffbf47; outline-offs
 .gestion-titulo { min-width: 0; overflow-wrap: anywhere; }
 .card-title, .card-text, .alert, .item-carrito h3 { overflow-wrap: anywhere; }
 .form-field { min-width: 0; }
-.form-field .form-select { min-width: 0; max-width: 100%; }
+.form-field .form-select { min-width: 0; max-width: 100%; overflow: hidden; text-overflow: ellipsis; }
 @media (max-width: 575.98px) { .gestion-lista { max-height: none; } }

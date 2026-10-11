@@ -10,43 +10,53 @@ export const CATEGORIAS = [
 export const PORTADAS = [
   {
     "ruta": "assets/img/assassins-creed-black-flag-resynced.jpg",
-    "nombre": "Assassin’s Creed Black Flag Resynced"
+    "nombre": "Assassin’s Creed Black Flag Resynced",
+    "etiqueta": "Assassin’s Creed"
   },
   {
     "ruta": "assets/img/call-of-duty-black-ops-6.webp",
-    "nombre": "Call of Duty: Black Ops 6"
+    "nombre": "Call of Duty: Black Ops 6",
+    "etiqueta": "Black Ops 6"
   },
   {
     "ruta": "assets/img/crash-team-racing-nitro-fueled.avif",
-    "nombre": "Crash Team Racing Nitro-Fueled"
+    "nombre": "Crash Team Racing Nitro-Fueled",
+    "etiqueta": "Crash Team Racing"
   },
   {
     "ruta": "assets/img/need-for-speed-most-wanted.webp",
-    "nombre": "Need for Speed: Most Wanted"
+    "nombre": "Need for Speed: Most Wanted",
+    "etiqueta": "NFS: Most Wanted"
   },
   {
     "ruta": "assets/img/dark-souls.webp",
-    "nombre": "Dark Souls"
+    "nombre": "Dark Souls",
+    "etiqueta": "Dark Souls"
   },
   {
     "ruta": "assets/img/uncharted-4.webp",
-    "nombre": "Uncharted 4: A Thief’s End"
+    "nombre": "Uncharted 4: A Thief’s End",
+    "etiqueta": "Uncharted 4"
   },
   {
     "ruta": "assets/img/diablo-iii.webp",
-    "nombre": "Diablo III"
+    "nombre": "Diablo III",
+    "etiqueta": "Diablo III"
   },
   {
     "ruta": "assets/img/god-of-war-ragnarok.avif",
-    "nombre": "God of War Ragnarök"
+    "nombre": "God of War Ragnarök",
+    "etiqueta": "God of War Ragnarök"
   },
   {
     "ruta": "assets/img/ea-sports-fc-27.jpg",
-    "nombre": "EA SPORTS FC 27"
+    "nombre": "EA SPORTS FC 27",
+    "etiqueta": "EA SPORTS FC 27"
   },
   {
     "ruta": "assets/img/nba-2k27.webp",
-    "nombre": "NBA 2K27"
+    "nombre": "NBA 2K27",
+    "etiqueta": "NBA 2K27"
   }
 ];
 

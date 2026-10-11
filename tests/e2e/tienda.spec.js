@@ -8,8 +8,9 @@ async function catalogo(page) {
   await expect(page.locator('.producto-card')).toHaveCount(10);
 }
 async function imagenesListas(page) {
-  await page.locator('.producto-card').last().scrollIntoViewIfNeeded();
-  await expect.poll(() => page.locator('img').evaluateAll((imagenes) => imagenes.every((imagen) => imagen.complete && imagen.naturalWidth > 0))).toBe(true);
+  // Cada navegador precarga una distancia distinta para loading="lazy".
+  for (const tarjeta of await page.locator('.producto-card').all()) await tarjeta.scrollIntoViewIfNeeded();
+  await expect.poll(() => page.locator('img').evaluateAll((imagenes) => imagenes.filter((imagen) => !imagen.complete || imagen.naturalWidth === 0).map((imagen) => imagen.alt))).toEqual([]);
 }
 
 test('catálogo, ofertas, imágenes y carrito inicial', async ({ page }) => {

@@ -1,6 +1,6 @@
 // Bootstrap y accesibilidad compartidos por ambos formularios.
 export default function FormField({ id, label, error, children }) {
-  return <div className="mb-3">
+  return <div className="mb-3 form-field">
     <label className="form-label fw-semibold" htmlFor={id}>{label}</label>
     {children}
     {error && <div id={`${id}-error`} className="invalid-feedback d-block">{error}</div>}

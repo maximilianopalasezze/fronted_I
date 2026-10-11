@@ -1,5 +1,5 @@
 /* =========================================================
-   GAME ZONE X - SEMANA 8
+   GAME ZONE X - SEMANA 9
    Estilos complementarios a Bootstrap 5.
    ========================================================= */
 
@@ -107,3 +107,8 @@ button:focus-visible, a:focus-visible { outline: 3px solid #ffbf47; outline-offs
   .producto-card { transition: none; }
   .producto-card:hover { transform: none; }
 }
+
+.gestion-lista { max-height: 500px; overflow-y: auto; }
+.gestion-titulo { min-width: 0; overflow-wrap: anywhere; }
+.card-title, .card-text, .alert, .item-carrito h3 { overflow-wrap: anywhere; }
+@media (max-width: 575.98px) { .gestion-lista { max-height: none; } }

@@ -1,14 +1,18 @@
 import ProductCard from './ProductCard.jsx';
 import { CATEGORIAS } from '../utils/catalogo.js';
 
-export default function ProductList({ productos, carrito, estado, categoria, busqueda, onLimpiar, onReintentar, onAgregar }) {
+export default function ProductList({ productos, carrito, estado, categoria, busqueda, onLimpiar, onReintentar, onAgregar, onCategoria }) {
   const nombreCategoria = CATEGORIAS.find(({ id }) => id === categoria)?.nombre;
   return <div className="col-12 col-lg-8">
     <div className="d-flex flex-column flex-md-row justify-content-between align-items-md-end gap-3 mb-4">
       <div>
         <p className="text-primary fw-semibold mb-1">Catálogo</p>
-        <h2 className="fw-bold mb-1">Nuestros productos</h2>
-        {estado === 'listo' && <p className="text-secondary mb-0" role="status">
+        <h2 className="fw-bold mb-1">Nuestros videojuegos</h2>
+        <div className="d-flex flex-wrap gap-2 mb-4" role="group" aria-label="Filtrar por categoría">
+      {CATEGORIAS.map((c) => <button key={c.id} type="button" className={`btn btn-sm ${categoria === c.id ? 'btn-primary' : 'btn-outline-primary'}`}
+        aria-pressed={categoria === c.id} onClick={() => onCategoria(c.id)}>{c.nombre}</button>)}
+    </div>
+    {estado === 'listo' && <p className="text-secondary mb-0" role="status">
           {productos.length} producto(s) · {nombreCategoria}{busqueda.trim() && ` · “${busqueda.trim()}”`}
         </p>}
       </div>

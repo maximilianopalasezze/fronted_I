@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { CATEGORIAS } from '../utils/catalogo.js';
 
 export default function Navbar({ categoria, onCategoria, busqueda, onBusqueda, cantidad }) {
   const [abierto, setAbierto] = useState(false);
@@ -18,11 +17,8 @@ export default function Navbar({ categoria, onCategoria, busqueda, onBusqueda, c
         </button>
         <div id="navbarPrincipal" className={`collapse navbar-collapse ${abierto ? 'show' : ''}`}>
           <ul className="navbar-nav me-auto mb-2 mb-xl-0">
-            {CATEGORIAS.map(({ id, nombre }) => <li className="nav-item" key={id}>
-              <a className={`nav-link ${categoria === id ? 'active' : ''}`} href="#productos"
-                aria-current={categoria === id ? 'true' : undefined}
-                onClick={() => { onCategoria(id); setAbierto(false); }}>{nombre}</a>
-            </li>)}
+            {[['#inicio', 'Inicio'], ['#productos', 'Videojuegos'], ['#gestion', 'Gestionar catálogo'], ['#contacto', 'Contacto']].map(([href, texto]) =>
+              <li className="nav-item" key={href}><a className="nav-link" href={href} onClick={() => setAbierto(false)}>{texto}</a></li>)}
           </ul>
           <form className="d-flex gap-2" role="search" onSubmit={buscar}>
             <label htmlFor="busqueda" className="visually-hidden">Buscar producto</label>

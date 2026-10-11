@@ -8,15 +8,15 @@ export default function ProductList({ productos, carrito, estado, categoria, bus
       <div>
         <p className="text-primary fw-semibold mb-1">Catálogo</p>
         <h2 className="fw-bold mb-1">Nuestros videojuegos</h2>
-        <div className="d-flex flex-wrap gap-2 mb-4" role="group" aria-label="Filtrar por categoría">
-      {CATEGORIAS.map((c) => <button key={c.id} type="button" className={`btn btn-sm ${categoria === c.id ? 'btn-primary' : 'btn-outline-primary'}`}
-        aria-pressed={categoria === c.id} onClick={() => onCategoria(c.id)}>{c.nombre}</button>)}
-    </div>
-    {estado === 'listo' && <p className="text-secondary mb-0" role="status">
+        {estado === 'listo' && <p className="text-secondary mb-0" role="status">
           {productos.length} producto(s) · {nombreCategoria}{busqueda.trim() && ` · “${busqueda.trim()}”`}
         </p>}
       </div>
       <button className="btn btn-outline-primary text-nowrap" type="button" onClick={onLimpiar}>Mostrar todos</button>
+    </div>
+    <div className="d-flex flex-wrap gap-2 mb-4" role="group" aria-label="Filtrar por categoría">
+      {CATEGORIAS.map((c) => <button key={c.id} type="button" className={`btn btn-sm ${categoria === c.id ? 'btn-primary' : 'btn-outline-primary'}`}
+        aria-pressed={categoria === c.id} onClick={() => onCategoria(c.id)}>{c.nombre}</button>)}
     </div>
     {estado === 'cargando' && <p className="alert alert-info" role="status">Cargando productos…</p>}
     {estado === 'error' && <div className="alert alert-danger" role="alert">

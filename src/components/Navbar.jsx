@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export default function Navbar({ categoria, onCategoria, busqueda, onBusqueda, cantidad }) {
+export default function Navbar({ busqueda, onBusqueda, cantidad }) {
   const [abierto, setAbierto] = useState(false);
   function buscar(evento) {
     evento.preventDefault();

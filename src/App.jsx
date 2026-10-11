@@ -34,7 +34,7 @@ export default function App() {
 
   return <>
     <a className="visually-hidden-focusable skip-link" href="#productos">Saltar al catálogo</a>
-    <Navbar categoria={categoria} onCategoria={setCategoria} busqueda={busqueda} onBusqueda={setBusqueda} cantidad={resumen.cantidad} />
+    <Navbar busqueda={busqueda} onBusqueda={setBusqueda} cantidad={resumen.cantidad} />
     <main>
       <Hero />
       <section id="productos" className="py-5 bg-body-tertiary" aria-label="Productos y carrito">

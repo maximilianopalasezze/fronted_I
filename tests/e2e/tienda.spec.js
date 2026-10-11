@@ -136,7 +136,7 @@ test('pantalla móvil: menú, filtro, carrito y ausencia de desborde', async ({ 
   await page.setViewportSize({ width: 390, height: 844 });
   await catalogo(page);
   await page.getByRole('button', { name: 'Mostrar navegación', exact: true }).click();
-  await page.getByRole('link', { name: 'Videojuegos', exact: true }).click();
+  await page.getByRole('navigation', { name: 'Navegación principal' }).getByRole('link', { name: 'Videojuegos', exact: true }).click();
   await page.getByRole('button', { name: 'Aventura', exact: true }).click();
   await expect(page.locator('.producto-card')).toHaveCount(2);
   await expect(page.getByRole('button', { name: 'Mostrar navegación' })).toHaveAttribute('aria-expanded', 'false');
@@ -155,6 +155,7 @@ test('contacto rechaza campos vacíos, espacios y correo incorrecto; acepta dato
   await contacto.getByRole('button', { name: 'Enviar mensaje' }).click();
   await expect(page.locator('#contacto-nombre')).toBeFocused();
   await expect(contacto.locator('.invalid-feedback')).toHaveCount(3);
+  await page.evaluate(() => window.scrollTo(0, document.getElementById('contacto').offsetTop - 80));
   await captura(page, '11_contacto_errores');
   await contacto.getByLabel('Nombre', { exact: true }).fill('   ');
   await contacto.getByLabel('Email', { exact: true }).fill('correo@invalido');
@@ -169,6 +170,7 @@ test('contacto rechaza campos vacíos, espacios y correo incorrecto; acepta dato
   await expect(contacto.getByRole('status')).toContainText('no se envían correos');
   await expect(contacto.getByLabel('Nombre', { exact: true })).toHaveValue('');
   await expect(contacto.locator('.invalid-feedback')).toHaveCount(0);
+  await page.evaluate(() => window.scrollTo(0, document.getElementById('contacto').offsetTop - 80));
   await captura(page, '12_contacto_validado');
   await contacto.getByLabel('Nombre', { exact: true }).fill('Nueva consulta');
   await expect(contacto.getByRole('status')).toBeEmpty();
@@ -193,6 +195,7 @@ test('agregar un videojuego modifica el catálogo, limpia filtros y permite comp
   await expect(page.locator('.producto-card')).toHaveCount(7);
   await expect(page.getByRole('searchbox', { name: 'Buscar producto' })).toHaveValue('');
   await expect(page.getByTestId('producto-7')).toContainText('Mi nuevo juego');
+  await page.getByTestId('producto-7').scrollIntoViewIfNeeded();
   await captura(page, '13_videojuego_agregado');
   await page.getByRole('button', { name: 'Aventura', exact: true }).click();
   await expect(page.locator('.producto-card')).toHaveCount(3);
@@ -231,6 +234,7 @@ test('retiro confirmado sincroniza catálogo y carrito; cancelar mantiene el jue
   await expect(page.getByTestId('carrito-item-1')).toHaveCount(0);
   await expect(page.getByTestId('contador-navbar')).toHaveText('0');
   await expect(page.getByTestId('total-carrito')).toHaveText('$0');
+  await page.evaluate(() => window.scrollTo(0, document.getElementById('gestion').offsetTop - 80));
   await captura(page, '14_videojuego_retirado');
 });
 

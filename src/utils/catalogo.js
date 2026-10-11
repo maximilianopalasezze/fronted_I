@@ -4,16 +4,50 @@ export const CATEGORIAS = [
   { id: 'aventura', nombre: 'Aventura' },
   { id: 'deportes', nombre: 'Deportes' },
   { id: 'carreras', nombre: 'Carreras' },
-  { id: 'estrategia', nombre: 'Estrategia' },
+  { id: 'rol', nombre: 'Rol (RPG)' },
 ];
 
 export const PORTADAS = [
-  { ruta: 'assets/img/nebula.svg', nombre: 'Nebula — espacio' },
-  { ruta: 'assets/img/bosque.svg', nombre: 'Bosque — aventura' },
-  { ruta: 'assets/img/estadio.svg', nombre: 'Estadio — deportes' },
-  { ruta: 'assets/img/velocidad.svg', nombre: 'Velocidad — carreras' },
-  { ruta: 'assets/img/reinos.svg', nombre: 'Reinos — estrategia' },
-  { ruta: 'assets/img/aurora.svg', nombre: 'Aurora — exploración' },
+  {
+    "ruta": "assets/img/assassins-creed-black-flag-resynced.jpg",
+    "nombre": "Assassin’s Creed Black Flag Resynced"
+  },
+  {
+    "ruta": "assets/img/call-of-duty-black-ops-6.webp",
+    "nombre": "Call of Duty: Black Ops 6"
+  },
+  {
+    "ruta": "assets/img/crash-team-racing-nitro-fueled.avif",
+    "nombre": "Crash Team Racing Nitro-Fueled"
+  },
+  {
+    "ruta": "assets/img/need-for-speed-most-wanted.webp",
+    "nombre": "Need for Speed: Most Wanted"
+  },
+  {
+    "ruta": "assets/img/dark-souls.webp",
+    "nombre": "Dark Souls"
+  },
+  {
+    "ruta": "assets/img/uncharted-4.webp",
+    "nombre": "Uncharted 4: A Thief’s End"
+  },
+  {
+    "ruta": "assets/img/diablo-iii.webp",
+    "nombre": "Diablo III"
+  },
+  {
+    "ruta": "assets/img/god-of-war-ragnarok.avif",
+    "nombre": "God of War Ragnarök"
+  },
+  {
+    "ruta": "assets/img/ea-sports-fc-27.jpg",
+    "nombre": "EA SPORTS FC 27"
+  },
+  {
+    "ruta": "assets/img/nba-2k27.webp",
+    "nombre": "NBA 2K27"
+  }
 ];
 
 export function normalizarTexto(texto) {

@@ -5,7 +5,7 @@ async function captura(page, nombre, opciones = {}) {
 }
 async function catalogo(page) {
   await page.goto('./');
-  await expect(page.locator('.producto-card')).toHaveCount(6);
+  await expect(page.locator('.producto-card')).toHaveCount(10);
 }
 async function imagenesListas(page) {
   await page.locator('.producto-card').last().scrollIntoViewIfNeeded();
@@ -31,19 +31,19 @@ test('agregar, cantidades, total de oferta, eliminar y vaciar', async ({ page })
   const agregarPS5 = page.getByTestId('producto-1').getByRole('button');
   await agregarPS5.click();
   await agregarPS5.click();
-  await page.getByRole('button', { name: 'Agregar Bosque Perdido al carrito', exact: true }).click();
+  await page.getByRole('button', { name: 'Agregar Call of Duty: Black Ops 6 al carrito', exact: true }).click();
   await expect(page.getByTestId('contador-navbar')).toHaveText('3');
   await expect(page.getByTestId('contador-carrito')).toHaveText('3');
   await expect(page.getByTestId('total-carrito')).toHaveText('$109.970');
   await expect(page.getByTestId('ahorro')).toHaveText('$25.000');
   await page.locator('#productos').scrollIntoViewIfNeeded();
   await captura(page, '02_carrito_tres_unidades');
-  await page.getByRole('button', { name: 'Quitar una unidad de Nebula Frontier', exact: true }).click();
+  await page.getByRole('button', { name: 'Quitar una unidad de Assassin’s Creed Black Flag Resynced', exact: true }).click();
   await expect(page.getByTestId('total-carrito')).toHaveText('$69.980');
-  await expect(page.getByRole('button', { name: 'Quitar una unidad de Nebula Frontier', exact: true })).toBeDisabled();
-  await page.getByRole('button', { name: 'Sumar una unidad de Nebula Frontier', exact: true }).click();
+  await expect(page.getByRole('button', { name: 'Quitar una unidad de Assassin’s Creed Black Flag Resynced', exact: true })).toBeDisabled();
+  await page.getByRole('button', { name: 'Sumar una unidad de Assassin’s Creed Black Flag Resynced', exact: true }).click();
   await expect(page.getByTestId('total-carrito')).toHaveText('$109.970');
-  await page.getByRole('button', { name: 'Eliminar Bosque Perdido', exact: true }).click();
+  await page.getByRole('button', { name: 'Eliminar Call of Duty: Black Ops 6', exact: true }).click();
   await expect(page.getByTestId('carrito-item-2')).toHaveCount(0);
   await expect(page.getByTestId('contador-navbar')).toHaveText('2');
   await expect(page.getByTestId('total-carrito')).toHaveText('$79.980');
@@ -66,9 +66,9 @@ test('botón condicional sincronizado al agregar, filtrar, eliminar y vaciar', a
   await expect(ps5.getByRole('button')).toHaveClass(/btn-success/);
   await expect(ps5).toContainText('1 unidad · Pulsa para agregar otra.');
   await expect(xbox.getByRole('button')).toHaveText('Agregar al carrito');
-  await ps5.getByRole('button', { name: 'Agregar otra unidad de Nebula Frontier', exact: true }).click();
+  await ps5.getByRole('button', { name: 'Agregar otra unidad de Assassin’s Creed Black Flag Resynced', exact: true }).click();
   await expect(ps5).toContainText('2 unidades · Pulsa para agregar otra.');
-  await page.getByRole('button', { name: 'Quitar una unidad de Nebula Frontier', exact: true }).click();
+  await page.getByRole('button', { name: 'Quitar una unidad de Assassin’s Creed Black Flag Resynced', exact: true }).click();
   await expect(ps5).toContainText('1 unidad · Pulsa para agregar otra.');
   // Ocultar y volver a mostrar una tarjeta conserva el estado real del carrito.
   await page.getByRole('button', { name: 'Carreras', exact: true }).click();
@@ -79,7 +79,7 @@ test('botón condicional sincronizado al agregar, filtrar, eliminar y vaciar', a
   // Encuadrar las primeras tarjetas después de cargar también las imágenes inferiores.
   await page.evaluate(() => window.scrollTo(0, document.getElementById('productos').offsetTop - 72));
   await captura(page, '10_boton_en_carrito');
-  await page.getByRole('button', { name: 'Eliminar Nebula Frontier', exact: true }).click();
+  await page.getByRole('button', { name: 'Eliminar Assassin’s Creed Black Flag Resynced', exact: true }).click();
   await expect(ps5.getByRole('button')).toHaveText('Agregar al carrito');
   await expect(ps5.getByRole('button')).toHaveClass(/btn-primary/);
   await expect(ps5.getByText('Pulsa para agregar otra.', { exact: false })).toHaveCount(0);
@@ -95,8 +95,8 @@ test('botón condicional sincronizado al agregar, filtrar, eliminar y vaciar', a
 test('onChange, onSubmit, categorías y búsqueda sin resultados', async ({ page }) => {
   await catalogo(page);
   await page.getByRole('button', { name: 'Carreras', exact: true }).click();
-  await expect(page.locator('.producto-card')).toHaveCount(1);
-  await page.getByRole('searchbox', { name: 'Buscar producto' }).fill('VELOCIDAD');
+  await expect(page.locator('.producto-card')).toHaveCount(2);
+  await page.getByRole('searchbox', { name: 'Buscar producto' }).fill('NEED FOR SPEED');
   await page.getByRole('button', { name: 'Buscar', exact: true }).click();
   await expect(page.locator('.producto-card')).toHaveCount(1);
   await expect(page.getByTestId('producto-4')).toBeVisible();
@@ -105,7 +105,7 @@ test('onChange, onSubmit, categorías y búsqueda sin resultados', async ({ page
   await expect(page.getByText('No encontramos productos', { exact: false })).toBeVisible();
   await captura(page, '06_sin_resultados');
   await page.getByRole('button', { name: 'Mostrar todos', exact: true }).click();
-  await expect(page.locator('.producto-card')).toHaveCount(6);
+  await expect(page.locator('.producto-card')).toHaveCount(10);
   await expect(page.getByRole('searchbox', { name: 'Buscar producto' })).toHaveValue('');
 });
 
@@ -117,7 +117,7 @@ test('fallo HTTP y recuperación al reintentar', async ({ page }) => {
   await captura(page, '07_error_recuperable');
   await page.unroute('**/assets/data/productos.json');
   await page.getByRole('button', { name: 'Reintentar', exact: true }).click();
-  await expect(page.locator('.producto-card')).toHaveCount(6);
+  await expect(page.locator('.producto-card')).toHaveCount(10);
 });
 
 test('estado de carga visible antes de recibir el JSON', async ({ page }) => {
@@ -129,7 +129,7 @@ test('estado de carga visible antes de recibir el JSON', async ({ page }) => {
   await page.locator('#productos').scrollIntoViewIfNeeded();
   await captura(page, '08_cargando');
   liberar();
-  await expect(page.locator('.producto-card')).toHaveCount(6);
+  await expect(page.locator('.producto-card')).toHaveCount(10);
 });
 
 test('pantalla móvil: menú, filtro, carrito y ausencia de desborde', async ({ page }) => {
@@ -140,7 +140,7 @@ test('pantalla móvil: menú, filtro, carrito y ausencia de desborde', async ({ 
   await page.getByRole('button', { name: 'Aventura', exact: true }).click();
   await expect(page.locator('.producto-card')).toHaveCount(2);
   await expect(page.getByRole('button', { name: 'Mostrar navegación' })).toHaveAttribute('aria-expanded', 'false');
-  await page.getByRole('button', { name: 'Agregar Aurora Islands al carrito' }).click();
+  await page.getByRole('button', { name: 'Agregar Uncharted 4: A Thief’s End al carrito' }).click();
   await expect(page.getByTestId('total-carrito')).toHaveText('$19.990');
   await page.locator('#carrito').scrollIntoViewIfNeeded();
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
@@ -164,7 +164,7 @@ test('contacto rechaza campos vacíos, espacios y correo incorrecto; acepta dato
   await expect(contacto.locator('.invalid-feedback')).toHaveCount(3);
   await contacto.getByLabel('Nombre', { exact: true }).fill('Maximiliano Palasezze');
   await contacto.getByLabel('Email', { exact: true }).fill('max@example.com');
-  await contacto.getByLabel('Mensaje', { exact: true }).fill('Quiero consultar por el juego Nebula Frontier.');
+  await contacto.getByLabel('Mensaje', { exact: true }).fill('Quiero consultar por el juego Assassin’s Creed Black Flag Resynced.');
   await contacto.getByRole('button', { name: 'Enviar mensaje' }).click();
   await expect(contacto.getByRole('status')).toContainText('Tu mensaje fue validado correctamente');
   await expect(contacto.getByRole('status')).toContainText('no se envían correos');
@@ -182,7 +182,7 @@ async function llenarJuego(page, nombre = 'Mi nuevo juego') {
   await form.getByLabel('Categoría', { exact: true }).selectOption('aventura');
   await form.getByLabel('Precio en CLP').fill('25000');
   await form.getByLabel('Descripción', { exact: true }).fill('Explora nuevos mundos y resuelve acertijos.');
-  await form.getByLabel('Portada', { exact: true }).selectOption('assets/img/aurora.svg');
+  await form.getByLabel('Portada', { exact: true }).selectOption('assets/img/uncharted-4.webp');
   return form;
 }
 
@@ -192,10 +192,10 @@ test('agregar un videojuego modifica el catálogo, limpia filtros y permite comp
   await page.getByRole('searchbox', { name: 'Buscar producto' }).fill('no existe');
   const form = await llenarJuego(page);
   await form.getByRole('button', { name: 'Agregar videojuego', exact: true }).click();
-  await expect(page.locator('.producto-card')).toHaveCount(7);
+  await expect(page.locator('.producto-card')).toHaveCount(11);
   await expect(page.getByRole('searchbox', { name: 'Buscar producto' })).toHaveValue('');
-  await expect(page.getByTestId('producto-7')).toContainText('Mi nuevo juego');
-  await page.getByTestId('producto-7').scrollIntoViewIfNeeded();
+  await expect(page.getByTestId('producto-11')).toContainText('Mi nuevo juego');
+  await page.getByTestId('producto-11').scrollIntoViewIfNeeded();
   await captura(page, '13_videojuego_agregado');
   await page.getByRole('button', { name: 'Aventura', exact: true }).click();
   await expect(page.locator('.producto-card')).toHaveCount(3);
@@ -209,27 +209,27 @@ test('gestión rechaza datos inválidos y títulos duplicados', async ({ page })
   await form.getByRole('button', { name: 'Agregar videojuego', exact: true }).click();
   await expect(form.locator('.invalid-feedback')).toHaveCount(3);
   await expect(page.locator('#juego-nombre')).toBeFocused();
-  await llenarJuego(page, '  Nebula Frontier  ');
+  await llenarJuego(page, '  Assassin’s Creed Black Flag Resynced  ');
   await form.getByRole('button', { name: 'Agregar videojuego', exact: true }).click();
   await expect(form).toContainText('Ya existe un videojuego');
-  await expect(page.locator('.producto-card')).toHaveCount(6);
+  await expect(page.locator('.producto-card')).toHaveCount(10);
   await form.getByLabel('Título del videojuego').fill('Otro juego');
   await form.getByLabel('Precio en CLP').fill('-2');
   await form.getByRole('button', { name: 'Agregar videojuego', exact: true }).click();
   await expect(form).toContainText('Ingresa un precio entero');
-  await expect(page.locator('.producto-card')).toHaveCount(6);
+  await expect(page.locator('.producto-card')).toHaveCount(10);
 });
 
 test('retiro confirmado sincroniza catálogo y carrito; cancelar mantiene el juego', async ({ page }) => {
   await catalogo(page);
-  await page.getByRole('button', { name: 'Agregar Nebula Frontier al carrito', exact: true }).click();
-  await page.getByRole('button', { name: 'Retirar Nebula Frontier del catálogo', exact: true }).click();
+  await page.getByRole('button', { name: 'Agregar Assassin’s Creed Black Flag Resynced al carrito', exact: true }).click();
+  await page.getByRole('button', { name: 'Retirar Assassin’s Creed Black Flag Resynced del catálogo', exact: true }).click();
   await page.getByRole('button', { name: 'Cancelar', exact: true }).click();
-  await expect(page.locator('.producto-card')).toHaveCount(6);
+  await expect(page.locator('.producto-card')).toHaveCount(10);
   await expect(page.getByTestId('contador-navbar')).toHaveText('1');
-  await page.getByRole('button', { name: 'Retirar Nebula Frontier del catálogo', exact: true }).click();
+  await page.getByRole('button', { name: 'Retirar Assassin’s Creed Black Flag Resynced del catálogo', exact: true }).click();
   await page.getByRole('button', { name: 'Confirmar retiro', exact: true }).click();
-  await expect(page.locator('.producto-card')).toHaveCount(5);
+  await expect(page.locator('.producto-card')).toHaveCount(9);
   await expect(page.getByTestId('producto-1')).toHaveCount(0);
   await expect(page.getByTestId('carrito-item-1')).toHaveCount(0);
   await expect(page.getByTestId('contador-navbar')).toHaveText('0');
@@ -240,7 +240,7 @@ test('retiro confirmado sincroniza catálogo y carrito; cancelar mantiene el jue
 
 test('el catálogo vacío permite agregar nuevamente sin reutilizar identificadores', async ({ page }) => {
   await catalogo(page);
-  for (const nombre of ['Nebula Frontier', 'Bosque Perdido', 'Estadio 26', 'Velocidad Nocturna', 'Reinos del Norte', 'Aurora Islands']) {
+  for (const nombre of ["Assassin’s Creed Black Flag Resynced", "Call of Duty: Black Ops 6", "Crash Team Racing Nitro-Fueled", "Need for Speed: Most Wanted", "Dark Souls", "Uncharted 4: A Thief’s End", "Diablo III", "God of War Ragnarök", "EA SPORTS FC 27", "NBA 2K27"]) {
     await page.getByRole('button', { name: `Retirar ${nombre} del catálogo`, exact: true }).click();
     await page.getByRole('button', { name: 'Confirmar retiro', exact: true }).click();
   }
@@ -249,10 +249,10 @@ test('el catálogo vacío permite agregar nuevamente sin reutilizar identificado
   const form = await llenarJuego(page);
   await form.getByRole('button', { name: 'Agregar videojuego', exact: true }).click();
   await expect(page.locator('.producto-card')).toHaveCount(1);
-  await expect(page.getByTestId('producto-7')).toContainText('Mi nuevo juego');
+  await expect(page.getByTestId('producto-11')).toContainText('Mi nuevo juego');
   await page.reload();
-  await expect(page.locator('.producto-card')).toHaveCount(6);
-  await expect(page.getByTestId('producto-7')).toHaveCount(0);
+  await expect(page.locator('.producto-card')).toHaveCount(10);
+  await expect(page.getByTestId('producto-11')).toHaveCount(0);
 });
 
 test('JSON inválido se rechaza y se recupera con reintento', async ({ page }) => {
@@ -262,7 +262,7 @@ test('JSON inválido se rechaza y se recupera con reintento', async ({ page }) =
   await expect(page.getByText('La gestión estará disponible', { exact: false })).toBeVisible();
   await page.unroute('**/assets/data/productos.json');
   await page.getByRole('button', { name: 'Reintentar', exact: true }).click();
-  await expect(page.locator('.producto-card')).toHaveCount(6);
+  await expect(page.locator('.producto-card')).toHaveCount(10);
 });
 
 for (const width of [320, 768, 1440]) {
@@ -280,7 +280,7 @@ for (const width of [320, 768, 1440]) {
     await expect(contacto.getByRole('status')).toContainText('validado correctamente');
     const form = await llenarJuego(page);
     await form.getByRole('button', { name: 'Agregar videojuego', exact: true }).click();
-    await expect(page.locator('.producto-card')).toHaveCount(7);
+    await expect(page.locator('.producto-card')).toHaveCount(11);
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   });
 }

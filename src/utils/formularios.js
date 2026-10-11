@@ -27,6 +27,6 @@ export function validarVideojuego(datos, productos = []) {
 }
 export function crearVideojuego(datos, id) {
   const producto = { id, nombre: datos.nombre.trim(), categoria: datos.categoria, precioNormal: Number(datos.precio), precioOferta: null,
-    descripcion: datos.descripcion.trim(), imagen: datos.imagen, alt: `Ilustración de portada de ${datos.nombre.trim()}` };
+    descripcion: datos.descripcion.trim(), imagen: datos.imagen, alt: `Portada de ${datos.nombre.trim()}` };
   return validarProductos([producto])[0];
 }

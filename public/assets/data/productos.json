@@ -1,62 +1,102 @@
 [
   {
     "id": 1,
-    "nombre": "Nebula Frontier",
-    "categoria": "accion",
+    "nombre": "Assassin’s Creed Black Flag Resynced",
+    "categoria": "aventura",
     "precioNormal": 49990,
     "precioOferta": 39990,
-    "descripcion": "Pilota tu nave, explora estaciones espaciales y defiende la frontera en una aventura de acción.",
-    "imagen": "assets/img/nebula.svg",
-    "alt": "Portada ilustrada de Nebula Frontier"
+    "descripcion": "Navega por el Caribe como Edward Kenway, explora islas y vive una aventura de piratas con sigilo, combates y batallas navales.",
+    "imagen": "assets/img/assassins-creed-black-flag-resynced.jpg",
+    "alt": "Portada de Assassin’s Creed Black Flag Resynced"
   },
   {
     "id": 2,
-    "nombre": "Bosque Perdido",
-    "categoria": "aventura",
+    "nombre": "Call of Duty: Black Ops 6",
+    "categoria": "accion",
     "precioNormal": 34990,
     "precioOferta": 29990,
-    "descripcion": "Resuelve acertijos y descubre los secretos de un bosque mágico en una aventura de exploración.",
-    "imagen": "assets/img/bosque.svg",
-    "alt": "Portada ilustrada de Bosque Perdido"
+    "descripcion": "Participa en una campaña de espionaje y acción en primera persona, compite en multijugador y enfrenta oleadas de zombis.",
+    "imagen": "assets/img/call-of-duty-black-ops-6.webp",
+    "alt": "Portada de Call of Duty: Black Ops 6"
   },
   {
     "id": 3,
-    "nombre": "Estadio 26",
-    "categoria": "deportes",
-    "precioNormal": 59990,
-    "precioOferta": 49990,
-    "descripcion": "Forma tu equipo, compite en torneos y vive la emoción del fútbol en cada partido.",
-    "imagen": "assets/img/estadio.svg",
-    "alt": "Portada ilustrada de Estadio 26"
+    "nombre": "Crash Team Racing Nitro-Fueled",
+    "categoria": "carreras",
+    "precioNormal": 39990,
+    "precioOferta": 29990,
+    "descripcion": "Compite con Crash y sus amigos en carreras de karts. Domina los derrapes y utiliza objetos para superar a tus rivales en cada circuito.",
+    "imagen": "assets/img/crash-team-racing-nitro-fueled.avif",
+    "alt": "Portada de Crash Team Racing Nitro-Fueled"
   },
   {
     "id": 4,
-    "nombre": "Velocidad Nocturna",
+    "nombre": "Need for Speed: Most Wanted",
     "categoria": "carreras",
     "precioNormal": 39990,
     "precioOferta": 34990,
-    "descripcion": "Corre por circuitos urbanos, mejora tu automóvil y domina las carreras bajo las luces de la ciudad.",
-    "imagen": "assets/img/velocidad.svg",
-    "alt": "Portada ilustrada de Velocidad Nocturna"
+    "descripcion": "Recorre Rockport en carreras callejeras, personaliza tu automóvil y escapa de la policía mientras desafías a los pilotos de la Blacklist.",
+    "imagen": "assets/img/need-for-speed-most-wanted.webp",
+    "alt": "Portada de Need for Speed: Most Wanted"
   },
   {
     "id": 5,
-    "nombre": "Reinos del Norte",
-    "categoria": "estrategia",
+    "nombre": "Dark Souls",
+    "categoria": "rol",
     "precioNormal": 29990,
     "precioOferta": null,
-    "descripcion": "Construye tu fortaleza, administra recursos y planea tu estrategia para proteger el reino.",
-    "imagen": "assets/img/reinos.svg",
-    "alt": "Portada ilustrada de Reinos del Norte"
+    "descripcion": "Explora el reino de Lordran, mejora tu personaje y domina combates exigentes contra enemigos y jefes en un mundo de fantasía oscura.",
+    "imagen": "assets/img/dark-souls.webp",
+    "alt": "Portada de Dark Souls"
   },
   {
     "id": 6,
-    "nombre": "Aurora Islands",
+    "nombre": "Uncharted 4: A Thief’s End",
     "categoria": "aventura",
     "precioNormal": 24990,
     "precioOferta": 19990,
-    "descripcion": "Explora islas flotantes, encuentra tesoros y recorre paisajes que cambian con cada nuevo desafío.",
-    "imagen": "assets/img/aurora.svg",
-    "alt": "Portada ilustrada de Aurora Islands"
+    "descripcion": "Acompaña a Nathan Drake y a su hermano Sam en la búsqueda de un tesoro pirata, entre exploración, acertijos y acción cinematográfica.",
+    "imagen": "assets/img/uncharted-4.webp",
+    "alt": "Portada de Uncharted 4: A Thief’s End"
+  },
+  {
+    "id": 7,
+    "nombre": "Diablo III",
+    "categoria": "rol",
+    "precioNormal": 34990,
+    "precioOferta": 24990,
+    "descripcion": "Elige tu héroe, derrota hordas de demonios y consigue equipo para desarrollar tus habilidades y proteger el mundo de Santuario.",
+    "imagen": "assets/img/diablo-iii.webp",
+    "alt": "Portada de Diablo III"
+  },
+  {
+    "id": 8,
+    "nombre": "God of War Ragnarök",
+    "categoria": "accion",
+    "precioNormal": 59990,
+    "precioOferta": 49990,
+    "descripcion": "Viaja junto a Kratos y Atreus por los Nueve Reinos y enfrenta dioses y criaturas nórdicas mientras buscan respuestas antes del Ragnarök.",
+    "imagen": "assets/img/god-of-war-ragnarok.avif",
+    "alt": "Portada de God of War Ragnarök"
+  },
+  {
+    "id": 9,
+    "nombre": "EA SPORTS FC 27",
+    "categoria": "deportes",
+    "precioNormal": 69990,
+    "precioOferta": 59990,
+    "descripcion": "Lleva la emoción del fútbol a la cancha: combina pases, define tu táctica y busca el gol para conducir a tu equipo a la victoria.",
+    "imagen": "assets/img/ea-sports-fc-27.jpg",
+    "alt": "Portada de EA SPORTS FC 27"
+  },
+  {
+    "id": 10,
+    "nombre": "NBA 2K27",
+    "categoria": "deportes",
+    "precioNormal": 69990,
+    "precioOferta": 59990,
+    "descripcion": "Vive el baloncesto en la cancha, encadena pases y tiros y coordina a tu equipo para competir por la victoria en cada partido.",
+    "imagen": "assets/img/nba-2k27.webp",
+    "alt": "Portada de NBA 2K27"
   }
 ]

@@ -12,20 +12,20 @@ Las pruebas de tamaños usan viewports de navegador, no dispositivos físicos. N
 
 | Captura | Qué comprueba |
 | --- | --- |
-| [01 Catálogo](evidencias/semana9/01_catalogo.jpg) | Seis videojuegos, imágenes cargadas, categorías, precios normales y ofertas; carrito inicial vacío. |
-| [02 Carrito](evidencias/semana9/02_carrito_tres_unidades.jpg) | Dos unidades de Nebula y una de Bosque: tres unidades, total $109.970 y ahorro $25.000. |
-| [03 Eliminar línea](evidencias/semana9/03_producto_eliminado.jpg) | Eliminar Bosque recalcula contador y total sin modificar el catálogo. |
+| [01 Catálogo](evidencias/semana9/01_catalogo.jpg) | Diez videojuegos, imágenes cargadas, categorías, precios normales y ofertas; carrito inicial vacío. |
+| [02 Carrito](evidencias/semana9/02_carrito_tres_unidades.jpg) | Dos unidades de Assassin’s Creed y una de Call of Duty: tres unidades, total $109.970 y ahorro $25.000. |
+| [03 Eliminar línea](evidencias/semana9/03_producto_eliminado.jpg) | Eliminar Call of Duty recalcula contador y total sin modificar el catálogo. |
 | [04 Vaciar](evidencias/semana9/04_carrito_vaciado.jpg) | El carrito vuelve al estado vacío y el total a $0. |
 | [05 Buscar y filtrar](evidencias/semana9/05_busqueda_categoria.jpg) | Categoría Carreras combinada con búsqueda en mayúsculas. |
 | [06 Sin resultados](evidencias/semana9/06_sin_resultados.jpg) | Mensaje de búsqueda sin resultados y recuperación con Mostrar todos. |
 | [07 Error recuperable](evidencias/semana9/07_error_recuperable.jpg) | Fallo HTTP 503 simulado y botón de reintento real. |
 | [08 Carga](evidencias/semana9/08_cargando.jpg) | Estado de carga antes de recibir el JSON. |
-| [09 Móvil](evidencias/semana9/09_vista_movil.jpg) | Vista de 390px, filtro Aventura, compra de Aurora y contenido sin desborde horizontal. |
+| [09 Móvil](evidencias/semana9/09_vista_movil.jpg) | Vista de 390px, filtro Aventura, compra de Uncharted 4 y contenido sin desborde horizontal. |
 | [10 Estado del botón](evidencias/semana9/10_boton_en_carrito.jpg) | Tarjeta y carrito comparten la misma cantidad; el botón cambia de texto y color. |
 | [11 Contacto inválido](evidencias/semana9/11_contacto_errores.jpg) | Nombre, email y mensaje vacíos generan errores asociados a sus campos. |
 | [12 Contacto válido](evidencias/semana9/12_contacto_validado.jpg) | Datos válidos muestran confirmación y se limpian; se informa que el envío es simulado. |
-| [13 Agregar juego](evidencias/semana9/13_videojuego_agregado.jpg) | Un séptimo videojuego se agrega al estado, aparece en tarjetas y puede comprarse. |
-| [14 Retirar juego](evidencias/semana9/14_videojuego_retirado.jpg) | Retiro confirmado de Nebula actualiza catálogo, carrito, contador y total. |
+| [13 Agregar juego](evidencias/semana9/13_videojuego_agregado.jpg) | Un undécimo videojuego se agrega al estado, aparece en tarjetas y puede comprarse. |
+| [14 Retirar juego](evidencias/semana9/14_videojuego_retirado.jpg) | Retiro confirmado de Assassin’s Creed actualiza catálogo, carrito, contador y total. |
 
 ## Correspondencia con la pauta
 

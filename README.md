@@ -26,16 +26,33 @@ La compilación se guarda en `dist/`; la vista previa usa `http://localhost:4173
 
 ## Uso
 
-1. **Inicio y videojuegos:** seis juegos ficticios con portadas originales, nombre, descripción, categoría y precios en CLP. Cinco tienen oferta y uno usa su precio normal.
-2. **Filtros:** selecciona Acción, Aventura, Deportes, Carreras o Estrategia. Combina el filtro con la búsqueda, que reconoce tildes y mayúsculas. “Mostrar todos” limpia ambos criterios.
+1. **Inicio y videojuegos:** diez videojuegos con las portadas aportadas por el alumno, nombre, descripción, categoría y precios en CLP. Nueve tienen oferta y Dark Souls usa su precio normal.
+2. **Filtros:** selecciona Acción, Aventura, Deportes, Carreras o Rol (RPG). Combina el filtro con la búsqueda, que reconoce tildes y mayúsculas. “Mostrar todos” limpia ambos criterios.
 3. **Carrito:** agrega juegos, suma o resta unidades, elimina una línea o vacía el carrito. El contador representa unidades; subtotal, ahorro y total se calculan desde el mismo estado.
 4. **Gestionar catálogo:** completa título, categoría, precio entero en CLP, descripción y portada; pulsa “Agregar videojuego”. El listado se actualiza y se limpian los filtros para mostrar el nuevo juego. Para eliminarlo, pulsa “Retirar” y confirma; “Cancelar” conserva el juego. El retiro también elimina sus unidades del carrito.
 5. **Contacto:** introduce nombre, email y mensaje. Los campos vacíos, espacios, correo incorrecto y mensaje demasiado corto muestran errores junto a cada campo y enfocan el primero inválido. Un formulario válido muestra una confirmación y se limpia.
 6. **Errores de carga:** si falla la petición o el JSON es inválido, el catálogo muestra un error y permite un reintento real. La gestión espera hasta que la carga sea correcta.
 
+## Catálogo
+
+| Videojuego | Categoría |
+| --- | --- |
+| Assassin’s Creed Black Flag Resynced | Aventura |
+| Call of Duty: Black Ops 6 | Acción |
+| Crash Team Racing Nitro-Fueled | Carreras |
+| Need for Speed: Most Wanted | Carreras |
+| Dark Souls | Rol (RPG) |
+| Uncharted 4: A Thief’s End | Aventura |
+| Diablo III | Rol (RPG) |
+| God of War Ragnarök | Acción |
+| EA SPORTS FC 27 | Deportes |
+| NBA 2K27 | Deportes |
+
+Las imágenes se conservan completas, sin recortar, y se sirven desde el propio proyecto. Las descripciones son breves resúmenes redactados para esta tienda académica.
+
 ## Alcance de la demostración
 
-Los videojuegos, precios e ilustraciones son datos de demostración. No se realizan pagos ni pedidos. El formulario valida los datos y simula el envío; **no envía correos** y lo indica en pantalla. No se requiere backend en esta EFT. El carrito y los cambios del catálogo duran hasta recargar; el JSON original no se modifica. La gestión está abierta para demostrar agregar/eliminar con React; una tienda real necesitaría autenticación y persistencia en servidor.
+Los precios y ofertas en CLP son datos de demostración. Las diez portadas fueron aportadas por el alumno. Los nombres corresponden a las portadas, incluidos EA SPORTS FC 27 y NBA 2K27; sus textos describen fútbol y baloncesto sin atribuir novedades específicas a esas ediciones. No se realizan pagos ni pedidos. El formulario valida los datos y simula el envío; **no envía correos** y lo indica en pantalla. No se requiere backend en esta EFT. El carrito y los cambios del catálogo duran hasta recargar; el JSON original no se modifica. La gestión está abierta para demostrar agregar/eliminar con React; una tienda real necesitaría autenticación y persistencia en servidor.
 
 ## Estructura y decisiones del código
 
@@ -53,7 +70,7 @@ Los videojuegos, precios e ilustraciones son datos de demostración. No se reali
 | `src/components/FormField.jsx` | Etiquetas y errores accesibles compartidos por ambos formularios. |
 | `src/utils/` | Funciones puras de catálogo, carrito y validación de formularios. |
 | `public/assets/data/productos.json` | Lista de objetos JavaScript/JSON con los datos del catálogo. |
-| `public/assets/img/` | Logo conservado y seis portadas SVG originales. |
+| `public/assets/img/` | Logo conservado y diez portadas del ZIP proporcionado. |
 | `src/styles.css` | Estilos complementarios, Flexbox con utilidades Bootstrap y ajustes responsivos. |
 | `tests/` | Pruebas unitarias y flujos de navegador. |
 | `docs/` | Evidencias explicadas de Semana 9 e historial separado de Semana 8. |

@@ -1,8 +1,8 @@
-name: Validar Semana 8
+name: Validar Semana 9
 
 on:
   push:
-    branches: [semana8-entrega]
+    branches: [semana9-evaluacion-final]
     paths-ignore:
       - 'docs/**'
       - 'README.md'
@@ -15,7 +15,7 @@ permissions:
 jobs:
   validar:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -25,19 +25,19 @@ jobs:
       - run: npm ci
       - run: npm test
       - run: npm run build
-      - run: npx playwright install --with-deps chromium
+      - run: npx playwright install --with-deps chromium firefox webkit
       - run: npm run test:e2e
-      - name: Guardar capturas de Semana 8
+      - name: Guardar capturas de Semana 9
         if: success()
         uses: actions/upload-artifact@v4
         with:
-          name: evidencias-semana8
-          path: docs/evidencias/semana8/*.png
+          name: evidencias-semana9
+          path: docs/evidencias/semana9/*.png
           if-no-files-found: error
       - name: Guardar diagnóstico si falla una prueba
         if: failure()
         uses: actions/upload-artifact@v4
         with:
-          name: diagnostico-semana8
+          name: diagnostico-semana9
           path: test-results/
           if-no-files-found: ignore

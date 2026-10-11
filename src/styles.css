@@ -30,7 +30,6 @@ body {
 
 .producto-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 0.8rem 1.8rem rgba(0, 0, 0, 0.12) !important;
 }
 
 .producto-card .card-img-top {

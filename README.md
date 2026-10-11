@@ -97,24 +97,3 @@ npm run test:e2e -- --project=chromium
 ```
 
 El workflow `.github/workflows/validar-semana9.yml` instala dependencias, ejecuta pruebas y compila en GitHub Actions. Guarda capturas de Chromium y diagnósticos cuando hay fallos. Los resultados comprobados y el alcance de la verificación figuran en [docs/EVIDENCIAS.md](docs/EVIDENCIAS.md).
-
-## GitHub y publicación
-
-- [Rama de la evaluación final](https://github.com/maximilianopalasezze/fronted_I/tree/semana9-evaluacion-final)
-- [Base de Semana 8](https://github.com/maximilianopalasezze/fronted_I/tree/semana8-entrega)
-- [GitHub Pages del proyecto](https://maximilianopalasezze.github.io/fronted_I/)
-
-La rama de código es `semana9-evaluacion-final`. La rama `gh-pages` contiene solamente el build. `base: '/fronted_I/'` mantiene las rutas correctas en Vite y Pages. Para publicar con Git autenticado y permiso de escritura:
-
-```powershell
-npm ci
-npm run deploy
-```
-
-En GitHub Pages se utiliza `gh-pages` y `/ (root)`. La versión de Semana 9 está publicada y fue comprobada el 11 de octubre de 2026. Las capturas están en [docs/evidencias/semana9](docs/evidencias/semana9).
-
-## Entrega y video
-
-La pauta pide **enlace del repositorio**, **video individual MP4** y **ZIP** con todos los archivos y recursos. La carpeta comprimida debe llamarse `MAXIMILIANO_EMANUEL_PALASEZZE_PFY2201_EFT_FRONT_END_I`. Se excluyen dependencias instaladas, cachés, archivos personales de apoyo y metadatos de Git; se incluyen fuentes, recursos, configuración, lockfile, pruebas, documentación y build.
-
-Para el video muestra inicio y tarjetas, filtros y búsqueda, carrito, agregar y retirar un juego, validación y confirmación del contacto, menú móvil y estructura del código. Explica `useState`, `useEffect`, props, hooks, etiquetas semánticas, Bootstrap y pruebas. Usa tus propias palabras y graba en MP4; el video aún debe producirlo el alumno.

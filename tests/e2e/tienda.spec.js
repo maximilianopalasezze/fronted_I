@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
-const rutaCaptura = (nombre) => `docs/evidencias/semana9/${nombre}.png`;
+const rutaCaptura = (nombre) => `docs/evidencias/semana9/${nombre}.jpg`;
 async function captura(page, nombre, opciones = {}) {
-  if (test.info().project.name === 'chromium') await page.screenshot({ path: rutaCaptura(nombre), ...opciones });
+  if (test.info().project.name === 'chromium') await page.screenshot({ path: rutaCaptura(nombre), type: 'jpeg', quality: 65, ...opciones });
 }
 async function catalogo(page) {
   await page.goto('./');

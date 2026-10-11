@@ -6,11 +6,10 @@ on:
     paths-ignore:
       - 'docs/**'
       - 'README.md'
-      - 'ENTREGA.txt'
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   validar:
@@ -27,12 +26,22 @@ jobs:
       - run: npm run build
       - run: npx playwright install --with-deps chromium firefox webkit
       - run: npm run test:e2e
+      - name: Publicar capturas verificadas en el repositorio
+        if: success() && github.ref == 'refs/heads/semana9-evaluacion-final'
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add docs/evidencias/semana9/*.jpg
+          if ! git diff --cached --quiet; then
+            git commit -m "docs: publicar las 14 capturas verificadas de Semana 9"
+            git push origin HEAD:semana9-evaluacion-final
+          fi
       - name: Guardar capturas de Semana 9
         if: success()
         uses: actions/upload-artifact@v4
         with:
           name: evidencias-semana9
-          path: docs/evidencias/semana9/*.png
+          path: docs/evidencias/semana9/*.jpg
           if-no-files-found: error
       - name: Guardar diagnóstico si falla una prueba
         if: failure()

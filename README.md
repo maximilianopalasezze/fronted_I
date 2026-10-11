@@ -1,117 +1,103 @@
-# Game Zone X — Semana 8
+# Game Zone X — Evaluación Final Semana 9
 
-## Enlaces de entrega
+Tienda académica de videojuegos para Desarrollo Frontend I (PFY2201). Incluye catálogo dinámico, filtros, búsqueda, carrito, gestión de videojuegos y contacto validado con HTML5, CSS3, Bootstrap 5, JavaScript y React.
 
-- [Código de la Semana 8](https://github.com/maximilianopalasezze/fronted_I/tree/semana8-entrega)
-- [Aplicación en GitHub Pages](https://maximilianopalasezze.github.io/fronted_I/)
-- [Rama de despliegue gh-pages](https://github.com/maximilianopalasezze/fronted_I/tree/gh-pages)
-- [Evidencias con explicación](docs/EVIDENCIAS.md)
+**Alumno:** Maximiliano Emanuel Palasezze. **Rama:** `semana9-evaluacion-final`, creada desde `semana8-entrega` conservando su historial.
 
-Las diez capturas nuevas se encuentran en `docs/evidencias/semana8/`, con explicación en `docs/EVIDENCIAS.md`.
+## Instalación en Windows
 
-## Funcionalidades
-
-- Seis productos con nombre, precio normal, precio oferta, descripción corta e imagen.
-- Oferta identificada mediante etiqueta y precio normal tachado. Los importes se expresan en CLP.
-- Carrito con agregar, incrementar/disminuir unidades, eliminar un producto completo y vaciar.
-- Contador de **unidades totales**, subtotales, ahorro y total calculados al precio de oferta vigente.
-- Categorías Todos, Consolas, Accesorios y Portátiles, combinadas con búsqueda en tiempo real que tolera tildes y mayúsculas.
-- Estados condicionales de carga, error con reintento, búsqueda sin resultados y carrito vacío.
-- Navegación móvil controlada por React, etiquetas accesibles y mensajes anunciados con `aria-live`.
-- Catálogo separado en `public/assets/data/productos.json`, siguiendo la recomendación del profesor. Vite lo publica como `assets/data/productos.json`.
-
-## Ejecutar en Windows
-
-Se requiere **Node.js 22.12 o superior** y npm. Abrir PowerShell en la carpeta del proyecto descomprimido, donde está `package.json`:
+Requiere Node.js 22.12 o superior y npm. Descomprime el ZIP y abre PowerShell en la carpeta que contiene `package.json`:
 
 ```powershell
 npm ci
 npm run dev
 ```
 
-Abrir la dirección que muestre Vite, normalmente `http://localhost:5173/fronted_I/`. Para detener el servidor, presionar `Ctrl+C`.
+Abre `http://localhost:5173/fronted_I/` o la dirección que indique Vite. Detén el servidor con `Ctrl+C`. No abras `index.html` con doble clic: JSX y Fetch requieren el servidor.
 
-**No abrir `index.html` con doble clic:** React/JSX requiere Vite y el catálogo utiliza Fetch API. Para ver la entrega sin instalar programas, usar el enlace de GitHub Pages.
-
-## Compilar y revisar la versión de producción
+Para comprobar producción:
 
 ```powershell
 npm run build
 npm run preview
 ```
 
-La compilación se guarda en `dist/`. La vista previa queda normalmente en `http://localhost:4173/fronted_I/`.
+La compilación se guarda en `dist/`; la vista previa usa `http://localhost:4173/fronted_I/`.
 
-## Pruebas reproducibles
+## Uso
+
+1. **Inicio y videojuegos:** seis juegos ficticios con portadas originales, nombre, descripción, categoría y precios en CLP. Cinco tienen oferta y uno usa su precio normal.
+2. **Filtros:** selecciona Acción, Aventura, Deportes, Carreras o Estrategia. Combina el filtro con la búsqueda, que reconoce tildes y mayúsculas. “Mostrar todos” limpia ambos criterios.
+3. **Carrito:** agrega juegos, suma o resta unidades, elimina una línea o vacía el carrito. El contador representa unidades; subtotal, ahorro y total se calculan desde el mismo estado.
+4. **Gestionar catálogo:** completa título, categoría, precio entero en CLP, descripción y portada; pulsa “Agregar videojuego”. El listado se actualiza y se limpian los filtros para mostrar el nuevo juego. Para eliminarlo, pulsa “Retirar” y confirma; “Cancelar” conserva el juego. El retiro también elimina sus unidades del carrito.
+5. **Contacto:** introduce nombre, email y mensaje. Los campos vacíos, espacios, correo incorrecto y mensaje demasiado corto muestran errores junto a cada campo y enfocan el primero inválido. Un formulario válido muestra una confirmación y se limpia.
+6. **Errores de carga:** si falla la petición o el JSON es inválido, el catálogo muestra un error y permite un reintento real. La gestión espera hasta que la carga sea correcta.
+
+## Alcance de la demostración
+
+Los videojuegos, precios e ilustraciones son datos de demostración. No se realizan pagos ni pedidos. El formulario valida los datos y simula el envío; **no envía correos** y lo indica en pantalla. No se requiere backend en esta EFT. El carrito y los cambios del catálogo duran hasta recargar; el JSON original no se modifica. La gestión está abierta para demostrar agregar/eliminar con React; una tienda real necesitaría autenticación y persistencia en servidor.
+
+## Estructura y decisiones del código
+
+| Archivo o carpeta | Responsabilidad |
+| --- | --- |
+| `src/main.jsx` | Monta React e importa Bootstrap 5 local, sin depender de un CDN. |
+| `src/App.jsx` | Coordina catálogo, filtros y carrito; transmite datos y callbacks por props. |
+| `src/hooks/useProductos.js` | Carga el JSON con `useEffect`, valida, cancela con `AbortController`, reintenta y modifica el catálogo con `useState`. |
+| `src/hooks/useCarrito.js` | Estado y operaciones del carrito; extraído según la retroalimentación del profesor. |
+| `src/components/Navbar.jsx` | Navegación a Inicio, Videojuegos, Gestión y Contacto; búsqueda y menú móvil. |
+| `src/components/ProductList.jsx` y `ProductCard.jsx` | Filtros y tarjetas reutilizables generadas con `map` y claves estables. |
+| `src/components/Cart.jsx` y `CartItem.jsx` | Resumen, cantidades, precios y eliminación de líneas. |
+| `src/components/CatalogManager.jsx` | Agregar videojuegos, validar y confirmar su retiro. |
+| `src/components/ContactForm.jsx` | Campos controlados, errores y confirmación de contacto. |
+| `src/components/FormField.jsx` | Etiquetas y errores accesibles compartidos por ambos formularios. |
+| `src/utils/` | Funciones puras de catálogo, carrito y validación de formularios. |
+| `public/assets/data/productos.json` | Lista de objetos JavaScript/JSON con los datos del catálogo. |
+| `public/assets/img/` | Logo conservado y seis portadas SVG originales. |
+| `src/styles.css` | Estilos complementarios, Flexbox con utilidades Bootstrap y ajustes responsivos. |
+| `tests/` | Pruebas unitarias y flujos de navegador. |
+| `docs/` | Evidencias explicadas de Semana 9 e historial separado de Semana 8. |
+
+Se usan etiquetas `header`, `nav`, `main`, `section`, `article`, `aside` y `footer`, la grilla responsiva de Bootstrap, tarjetas, formularios, botones, alertas y utilidades Flexbox. Los elementos tienen etiquetas, foco visible y mensajes con `aria-live`.
+
+**DOM dinámico:** JavaScript recorre los objetos del catálogo con `map`; React renderiza y actualiza las tarjetas en el DOM al cambiar el estado. No se combina `innerHTML` con React. `onChange`, `onClick` y `onSubmit` conectan la interactividad. Los formularios evitan recargar con `preventDefault`.
+
+Los componentes reciben objetos y funciones mediante props. Contadores, totales y productos filtrados son datos derivados; no se duplican en estados. Se usan actualizaciones funcionales e inmutables. Cada nuevo juego obtiene un ID incremental que no se reutiliza después de un retiro. Las validaciones de campos, precios y IDs evitan entradas inconsistentes.
+
+## Pruebas
 
 ```powershell
 npm test
 npm run build
-npx playwright install chromium
+npx playwright install chromium firefox webkit
 npm run test:e2e
 ```
 
-Las seis pruebas unitarias validan las reglas de precios, cantidades, inmutabilidad, filtros y estructura del JSON. Las siete pruebas de navegador validan flujos reales, simulan fallos de red y generan diez capturas en `docs/evidencias/semana8/`. Playwright inicia la vista previa automáticamente.
+Hay 10 pruebas unitarias y 16 escenarios end-to-end configurados en tres motores (48 ejecuciones). Cubren precios, cantidades, inmutabilidad, filtros combinados, JSON inválido, carga, reintento, contacto, agregar/retirar juegos, cancelación, catálogo vacío y pantallas de 320, 390, 768 y 1440 píxeles. Para ejecutar solo Chromium:
 
-## Organización
-
-```text
-public/assets/
-  data/productos.json       # Datos separados del código
-  img/                     # Imágenes del eCommerce original
-src/
-  main.jsx                 # Montaje de React e importación de Bootstrap
-  App.jsx                  # Estado compartido y coordinación
-  components/
-    Navbar.jsx             # Categorías, búsqueda y menú responsive
-    Hero.jsx               # Portada de Game Zone X
-    ProductList.jsx        # Listado y estados de carga/error/vacío
-    ProductCard.jsx        # Tarjeta reutilizable y ofertas
-    Cart.jsx               # Resumen y estado vacío
-    CartItem.jsx           # Cantidades, subtotal y eliminación
-    Footer.jsx             # Pie y navegación
-  hooks/useProductos.js    # Fetch, validación, cancelación y reintento
-  utils/catalogo.js        # Categorías, búsqueda y validación
-  utils/carrito.js         # Operaciones inmutables, precios y totales
-  styles.css               # Estilos Bootstrap complementarios
- tests/                    # Pruebas unitarias y de navegador
- docs/                     # Capturas y explicación de evidencias
- index.html
- package.json
- package-lock.json
- vite.config.js
- playwright.config.js
+```powershell
+npm run test:e2e -- --project=chromium
 ```
 
-## Estado y flujo de datos
+El workflow `.github/workflows/validar-semana9.yml` instala dependencias, ejecuta pruebas y compila en GitHub Actions. Guarda capturas de Chromium y diagnósticos cuando hay fallos. Los resultados comprobados y el alcance de la verificación figuran en [docs/EVIDENCIAS.md](docs/EVIDENCIAS.md).
 
-`App` mantiene carrito, categoría, búsqueda y mensaje con `useState`. El hook `useProductos` mantiene productos, estado de carga e intento. `Navbar` mantiene el estado del menú móvil. Los componentes reciben datos y callbacks mediante props; las listas usan `key={id}`.
+## GitHub y publicación
 
-Los cambios del carrito usan actualizadores funcionales (`setCarrito(actual => ...)`) y nuevas listas con `map`, `filter` y spread. El contador, total, ahorro y catálogo filtrado se **derivan** del estado; no se almacenan duplicados. Las funciones de negocio pueden probarse sin renderizar componentes.
+- [Rama de la evaluación final](https://github.com/maximilianopalasezze/fronted_I/tree/semana9-evaluacion-final)
+- [Base de Semana 8](https://github.com/maximilianopalasezze/fronted_I/tree/semana8-entrega)
+- [GitHub Pages del proyecto](https://maximilianopalasezze.github.io/fronted_I/)
 
-`onClick` maneja carrito, filtros, menú y reintento; `onChange` actualiza el campo controlado de búsqueda; `onSubmit` impide recargar y lleva al catálogo. React controla el contenido de la interfaz; no se construyen tarjetas con `createElement`.
-
-## Publicar actualizaciones en GitHub Pages
-
-La rama `semana8-entrega` contiene el código fuente. La rama `gh-pages` contiene el resultado de la compilación de React. `base: '/fronted_I/'` en Vite configura las rutas del repositorio.
-
-Con permiso de escritura en el repositorio y Git autenticado:
+La rama de código es `semana9-evaluacion-final`. La rama `gh-pages` contiene solamente el build. `base: '/fronted_I/'` mantiene las rutas correctas en Vite y Pages. Para publicar con Git autenticado y permiso de escritura:
 
 ```powershell
 npm ci
 npm run deploy
 ```
 
-El script `predeploy` compila y `gh-pages -d dist` publica. En GitHub, **Settings → Pages → Deploy from a branch → gh-pages → / (root)**. No seleccionar la rama de JSX como contenido estático. La Semana 7 permanece disponible en `semana7-entrega`.
+En GitHub Pages se utiliza `gh-pages` y `/ (root)`. La versión de Semana 9 está publicada y fue comprobada el 11 de octubre de 2026. Las capturas están en [docs/evidencias/semana9](docs/evidencias/semana9).
 
-## Alcance
+## Entrega y video
 
-Aplicación académica de frontend: no realiza pagos, no envía pedidos ni guarda datos personales. El carrito se mantiene durante la sesión de la página y se reinicia al recargar, tal como corresponde a esta implementación con `useState`. Las ofertas son datos de demostración, no precios comerciales verificados. Imágenes y marca conservadas del proyecto anterior.
+La pauta pide **enlace del repositorio**, **video individual MP4** y **ZIP** con todos los archivos y recursos. La carpeta comprimida debe llamarse `MAXIMILIANO_EMANUEL_PALASEZZE_PFY2201_EFT_FRONT_END_I`. Se excluyen dependencias instaladas, cachés, archivos personales de apoyo y metadatos de Git; se incluyen fuentes, recursos, configuración, lockfile, pruebas, documentación y build.
 
-
-
-El flujo `App → ProductList → ProductCard` transmite `cantidadEnCarrito`, calculada desde el mismo estado `carrito` que usa el resumen. El botón es azul y dice **Agregar al carrito** cuando el producto está ausente; cambia a verde y **✓ En el carrito** cuando está presente. Muestra la cantidad y permite agregar otra unidad. Al eliminar o vaciar, recupera su texto inicial; al filtrar, conserva el estado real del carrito.
-
-No se mantiene un booleano adicional que pueda desincronizarse. El contador y los totales se derivan del carrito. `useEffect` carga el JSON, valida los datos, actualiza productos/estado y cancela solicitudes al desmontar o reintentar.
-
-GitHub Actions valida los cambios de código de `semana8-entrega` mediante instalación limpia, seis pruebas unitarias, compilación y siete pruebas de Chromium. Guarda diez capturas como artefacto `evidencias-semana8`. También permite ejecución manual desde Actions. Los cambios exclusivos de documentación no repiten las pruebas.
+Para el video muestra inicio y tarjetas, filtros y búsqueda, carrito, agregar y retirar un juego, validación y confirmación del contacto, menú móvil y estructura del código. Explica `useState`, `useEffect`, props, hooks, etiquetas semánticas, Bootstrap y pruebas. Usa tus propias palabras y graba en MP4; el video aún debe producirlo el alumno.

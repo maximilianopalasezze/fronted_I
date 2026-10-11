@@ -282,6 +282,14 @@ for (const width of [320, 768, 1440]) {
     const form = await llenarJuego(page);
     await form.getByRole('button', { name: 'Agregar videojuego', exact: true }).click();
     await expect(page.locator('.producto-card')).toHaveCount(11);
-    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+    const dimensiones = await page.evaluate(() => ({
+      pagina: document.documentElement.scrollWidth, viewport: innerWidth,
+      desbordes: [...document.querySelectorAll('body *')].map((e) => ({
+        elemento: `${e.tagName.toLowerCase()}#${e.id}.${e.className}`,
+        derecha: e.getBoundingClientRect().right, ancho: e.getBoundingClientRect().width,
+        texto: e.textContent.slice(0, 70),
+      })).filter((e) => e.derecha > innerWidth + 1).slice(-12),
+    }));
+    expect(dimensiones.pagina <= dimensiones.viewport, JSON.stringify(dimensiones)).toBe(true);
   });
 }
